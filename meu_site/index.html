@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff5f8;
+      color: #ff007f;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .texto-especial {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #d23669;
+      font-style: italic;
+    }
+    .contador {
+      font-size: 2em;
+      margin: 20px;
+      font-weight: bold;
+    }
+    .fotos {
+      margin: 20px;
+    }
+    .fotos img {
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>❤️ Nosso Amor ❤️</h1>
+  <p class="texto-especial">"Cada dia ao seu lado é um presente que quero guardar para sempre no meu coração."</p>
+  <p>Estamos juntos há:</p>
+  <div class="contador" id="contador"></div>
+  <div class="fotos">
+    <!-- Fotos adicionadas -->
+    <img src="F65C45F2-8E9C-4735-A9DB-B81793FB18F7.jpeg" alt="Foto do casal na praia">
+    <img src="E9A4784E-6978-4C71-AD28-C0E6F0347C52.jpeg" alt="Foto do casal no carro">
+  </div>
+  <footer>Com muito amor, de mim para você! 💖</footer>
+  <script>
+    // Data e hora do início do namoro (exemplo: 1º de dezembro de 2023, às 15:30)
+    const dataInicial = new Date("2024-10-19T21:30:00"); 
+
+    const atualizaContador = () => {
+      const agora = new Date();
+      const diffTempo = agora - dataInicial;
+
+      const dias = Math.floor(diffTempo / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diffTempo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diffTempo % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diffTempo % (1000 * 60)) / 1000);
+
+      document.getElementById("contador").textContent = 
+        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    };
+
+    atualizaContador();
+    setInterval(atualizaContador, 1000); // Atualiza a cada segundo
+  </script>
+</body>
+</html>
